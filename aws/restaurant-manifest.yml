@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restaurantapp
+  namespace: microservices-app
+  labels:
+    app: restaurantapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurantapp
+  template:
+    metadata:
+      labels:
+        app: restaurantapp
+    spec:
+      containers:
+        - name: restaurantapp
+          image: lhdenis35/restolisting-ms:0.0.5
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9091
+          env:
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: secret
+                  key: mysql-username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: secret
+                  key: mysql-password
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap
+                  key: restaurantdb_url
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              value: "http://eureka-service:8761/eureka/"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: restaurant-service
+  namespace: microservices-app
+spec:
+  ports:
+    - protocol: TCP
+      port: 9091
+      targetPort: 9091
+  selector:
+    app: restaurantapp
+ 

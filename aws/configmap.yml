@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap
+  namespace: microservices-app
+data:
+  restaurantdb_url: jdbc:mysql://mysql-service:3306/restaurantdb
+  foodcataloguedb_url: jdbc:mysql://mysql-service:3306/foodcataloguedb
+  userdb_url: jdbc:mysql://mysql-service:3306/userdb
+  orderdb_url: mongodb://mongo-service:27017/orderdb
+  eureka_service_address: http://eureka-service:8761/eureka/
+
+

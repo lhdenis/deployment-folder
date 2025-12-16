@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angularapp
+  namespace: microservices-app
+spec:
+  replicas: 1  # Adjust the number of replicas as per your requirements
+  selector:
+    matchLabels:
+      app: angularapp
+  template:
+    metadata:
+      labels:
+        app: angularapp
+    spec:
+      containers:
+        - name: angular-app-container
+          image: lhdenis35/frontend:0.0.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-service
+  namespace: microservices-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: angularapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

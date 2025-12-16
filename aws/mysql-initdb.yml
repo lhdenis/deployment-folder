@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-initdb
+  namespace: microservices-app
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS restaurantdb;
+    CREATE DATABASE IF NOT EXISTS foodcataloguedb;
+    CREATE DATABASE IF NOT EXISTS userdb;
+    
+    CREATE USER IF NOT EXISTS 'admin'@'%' IDENTIFIED BY 'admin';
+    GRANT ALL PRIVILEGES ON restaurantdb.* TO 'admin'@'%';
+    GRANT ALL PRIVILEGES ON foodcataloguedb.* TO 'admin'@'%';
+    GRANT ALL PRIVILEGES ON userdb.* TO 'admin'@'%';
+    FLUSH PRIVILEGES;
