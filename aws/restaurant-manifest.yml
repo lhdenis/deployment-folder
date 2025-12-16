@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: restaurantapp
-          image: lhdenis35/restolisting-ms:0.0.5
+          image: lhdenis35/restaurant-listing-service:20
           imagePullPolicy: Always
           ports:
             - containerPort: 9091
