@@ -65,6 +65,9 @@ Le projet utilise deux types de stockage :
 
 #### 2) Base NoSQL : Le micro-service Order utilise une base de données MongoDB Atlas. En effet, ce service gère des commandes et une commande contient souvent : un identifiant, des infos utilisateurs, une liste d'articles, des quantités, des prix, un total, etc ...
 
+
+![img](https://github.com/lhdenis/deployment-folder/blob/master/architecture_kubernetes.png)
+
 ### 4. Déploiement cloud
 
 L’application est déployée sur AWS. Les applications sont dockerisées puis déployées dans un cluster Kubernetes managé par AWS, c'est à dire EKS.
