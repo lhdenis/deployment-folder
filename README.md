@@ -85,6 +85,8 @@ C’est un choix d’architecture par service, pas une base unique pour tout le 
 L’application est déployée sur AWS. Les applications sont dockerisées puis déployées dans un cluster Kubernetes managé par AWS, c'est à dire EKS.
 L’idée est que chaque microservice est une image Docker et chaque image est exécutée dans Kubernetes sous forme de pods.
 
+![img](https://github.com/lhdenis/deployment-folder/blob/master/architecture_kubernetes.png)
+
 ### 5. Réseau et exposition
 
 Pour exposer l’application, on utilise un load balancer AWS comme point d’entrée principal.
@@ -103,7 +105,7 @@ Le code est poussé sur GitHub, puis une chaîne CI/CD prend le relais.
 La partie CI est gérée par Jenkins, installé sur une instance EC2. Jenkins récupère le code, build l’application, lance les tests, applique les contrôles qualité
 La partie CD est gérée par Argo CD. Argo CD récupère l’état voulu, déploie automatiquement les mises à jour vers le cluster Kubernetes
 
-![img](https://github.com/lhdenis/deployment-folder/blob/master/architecture_kubernetes.png)
+![img](https://github.com/lhdenis/deployment-folder/blob/master/pipeline_jenkins.png)
 
 ## Prerequisites
 
