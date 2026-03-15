@@ -3,6 +3,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li> <a href="#about-the-project">About The Project</a></li>
+    <li> <a href="#fonctionnalités-principales">Fonctionnalités principales </a></li>
     <li> <a href="#built-with">Built With</a></li>
     <li> <a href="#Architecture-du-projet">Architecture du projet</a></li>
     
