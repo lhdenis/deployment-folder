@@ -75,10 +75,7 @@ Le projet utilise deux types de stockage :
 #### 1) Base relationnelle : Les données relationnelles sont stockées sur Amazon RDS.
 Cela concerne notamment les services qui ont besoin de données SQL.
 
-#### 2) Base NoSQL : Le order service utilise une base MongoDB Atlas.
-
-Donc l’architecture mélange SQL pour certains services, NoSQL pour les commandes.
-C’est un choix d’architecture par service, pas une base unique pour tout le système.
+#### 2) Base NoSQL : Le micro-service Order utilise une base de données MongoDB Atlas. En effet, ce service gère des commandes et une commande contient souvent : un identifiant, des infos utilisateurs, une liste d'articles, des quantités, des prix, un total, etc ...
 
 ### 4. Déploiement cloud
 
