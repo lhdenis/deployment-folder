@@ -65,28 +65,29 @@ Le projet utilise deux types de stockage :
 
 #### 2) Base NoSQL : Le micro-service Order utilise une base de données MongoDB Atlas. En effet, ce service gère des commandes et une commande contient souvent : un identifiant, des infos utilisateurs, une liste d'articles, des quantités, des prix, un total, etc ...
 
+### 4. Vue d'ensemble de l'application en local
 
 ![img](https://github.com/lhdenis/deployment-folder/blob/master/angular_springboot.png)
 
-### 4. Déploiement cloud
+### 5. Déploiement cloud
 
 L’application est déployée sur AWS. Les applications sont dockerisées puis déployées dans un cluster Kubernetes managé par AWS, c'est à dire EKS.
 L’idée est que chaque microservice est une image Docker et chaque image est exécutée dans Kubernetes sous forme de pods.
 
 ![img](https://github.com/lhdenis/deployment-folder/blob/master/architecture_kubernetes.png)
 
-### 5. Réseau et exposition
+### 6. Réseau et exposition
 
 Pour exposer l’application, on utilise un load balancer AWS comme point d’entrée principal.
 Son rôle est de recevoir le trafic externe, répartir la charge, router les requêtes vers le bon composant
 Le frontend devient la route par défaut, puis le routage se fait vers les microservices selon les URLs.
 Donc l’utilisateur n’appelle pas directement chaque pod ou chaque microservice : il passe par un point d’entrée externe unique.
 
-### 6. Qualité et tests
+### 7. Qualité et tests
 
 Avant le déploiement, on met en place des tests unitaires JUnit, des contrôles qualité avec SonarQube. Le but est de vérifier le code, mesurer la qualité, éviter de déployer un code cassé
 
-### 7. Pipeline CI/CD
+### 8. Pipeline CI/CD
 
 Le code est poussé sur GitHub, puis une chaîne CI/CD prend le relais.
 
