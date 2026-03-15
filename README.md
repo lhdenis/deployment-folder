@@ -72,8 +72,7 @@ Le backend est découpé en 4 microservices métiers :
 
 Le projet utilise deux types de stockage :
 
-#### 1) Base relationnelle : Les données relationnelles sont stockées sur Amazon RDS.
-Cela concerne notamment les services qui ont besoin de données SQL.
+#### 1) Base relationnelle : Les données relationnelles sont stockées sur Amazon RDS. Cela concerne notamment les services qui ont besoin de données SQL, c'est à dire tous les services sauf le service Order.
 
 #### 2) Base NoSQL : Le micro-service Order utilise une base de données MongoDB Atlas. En effet, ce service gère des commandes et une commande contient souvent : un identifiant, des infos utilisateurs, une liste d'articles, des quantités, des prix, un total, etc ...
 
