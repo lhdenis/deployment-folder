@@ -66,7 +66,7 @@ Le projet utilise deux types de stockage :
 #### 2) Base NoSQL : Le micro-service Order utilise une base de données MongoDB Atlas. En effet, ce service gère des commandes et une commande contient souvent : un identifiant, des infos utilisateurs, une liste d'articles, des quantités, des prix, un total, etc ...
 
 
-![img](https://github.com/lhdenis/deployment-folder/blob/master/angular_spring.png)
+![img](https://github.com/lhdenis/deployment-folder/blob/master/angular_springboot.png)
 
 ### 4. Déploiement cloud
 
