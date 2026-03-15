@@ -106,16 +106,3 @@ La partie CI est gérée par Jenkins, installé sur une instance EC2. Jenkins r�
 La partie CD est gérée par Argo CD. Argo CD récupère l’état voulu, déploie automatiquement les mises à jour vers le cluster Kubernetes
 
 ![img](https://github.com/lhdenis/deployment-folder/blob/master/pipeline_jenkins.png)
-
-## Prerequisites
-
-Il faut lister ce qu’il faut installer avant de lancer le projet.
-Exemple :
--Java 17
--Node.js
--Angular CLI
--Docker
--Kubernetes
--Maven
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
