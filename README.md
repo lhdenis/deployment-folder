@@ -15,7 +15,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#Architecture-du-projet">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -56,15 +56,16 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ### 1. Frontend
 
-Le frontend est une application Angular. Son rôle est de fournir l’interface utilisateur avec plusieurs pages, notamment : la liste des restaurantsle catalogue des plats d’un restaurantla page de commandeDonc côté client, l’utilisateur interagit uniquement avec Angular.
+Le frontend est une application Angular. Son rôle est de fournir l’interface utilisateur avec plusieurs pages, notamment : la liste des restaurants, le catalogue des plats d’un restaurantla, page de commande.
+Donc côté client, l’utilisateur interagit uniquement avec Angular.
 
 ### 2. Backend en microservices 
 
 Le backend est découpé en 4 microservices métiers :
--restaurant listing service : gère les restaurants
--food catalog service : gère les plats d’un restaurant
--user service : gère les informations utilisateur
--order service : gère les commandes
+- restaurant listing service : gère les restaurants
+- food catalog service : gère les plats d’un restaurant
+- user service : gère les informations utilisateur
+- order service : gère les commandes
 
 À cela s’ajoute Eureka Server, utilisé pour la service discovery entre microservices. Donc l’architecture backend n’est pas monolithique : chaque responsabilité métier est isolée dans son propre service.
 
